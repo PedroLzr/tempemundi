@@ -5,10 +5,20 @@ function preload(){
 }
 
 function setup(){
-    createCanvas(400, 400);
-    Image(imgMapa, 0, 0);
+    createCanvas(918, 466);
+    imgMapa.resize(918, 466);
+    image(imgMapa, 0, 0);
 }
 
 function draw(){
-    background(222);
+    pintarCuadricula();
+}
+
+function pintarCuadricula(){
+    for(let i = 0; i < width; i+10){
+        line(i, 0, i, height);
+    }
+    for(let i = 0; i < height; i+10){
+        line(0, i, width, i);
+    }
 }
