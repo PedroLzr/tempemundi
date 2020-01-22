@@ -1,19 +1,10 @@
 let imgMapa;
 let data = [];
 let ciudades = new Array("http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=28001,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
-                    "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric");
+ /*Paris*/          "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=75000,fr&units=metric",
+ /*Bogotá*/         "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=110111,co&units=metric",
+ /*Nueva York*/     "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=10001,us&units=metric",
+ /*Rauma*/          "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=26100,fi&units=metric");
 
 function preload(){
     imgMapa = loadImage('assets/World-Map.svg');
@@ -30,19 +21,23 @@ function setup(){
 
 function draw(){
     //pintarCuadricula();
-    pintarTodasCiudades();
+    pintarCiudades();
 }
 
-function pintarTodasCiudades(){
+function pintarCiudades(){
     noStroke();
     fill(255, 0, 0);
-    textSize(14);
+    textSize(10);
 
-    pintarMadrid();
+    pintarTemperaturas();
 }
 
-function pintarMadrid(){
-    text(data[0].list[0].main.temp_max, 420, 120);
+function pintarTemperaturas(){
+    text(data[0].list[0].main.temp + char(176), 420, 120); //Madrid
+    text(data[1].list[0].main.temp + char(176), 440, 100); //Paris
+    text(data[2].list[0].main.temp + char(176), 240, 230); //Bogotá
+    text(data[3].list[0].main.temp + char(176), 250, 120); //Nueva York
+    text(data[4].list[0].main.temp + char(176), 480, 50);  //Rauma
 }
 
 function pintarCuadricula(){
