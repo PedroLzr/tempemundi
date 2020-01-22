@@ -1,6 +1,6 @@
 let imgMapa;
 let data = [];
-let ciudades = array("http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=28001,es&units=metric",
+let ciudades = new Array("http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=28001,es&units=metric",
                     "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
                     "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
                     "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=03501,es&units=metric",
@@ -29,7 +29,7 @@ function setup(){
 }
 
 function draw(){
-    pintarCuadricula();
+    //pintarCuadricula();
     pintarTodasCiudades();
 }
 
@@ -42,7 +42,7 @@ function pintarTodasCiudades(){
 }
 
 function pintarMadrid(){
-    text(data[0].list[i].main.temp_max, 50, 80);
+    text(data[0].list[0].main.temp_max, 420, 120);
 }
 
 function pintarCuadricula(){
