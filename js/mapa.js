@@ -19,7 +19,7 @@ function preload(){
 function setup(){
     cbTemperaturas = createCheckbox('Temperaturas', true);
     cbHumedad = createCheckbox('Humedad', false);
-    cbPresion = createCheckbox('Presión Atmosférica', false);
+    cbPresion = createCheckbox('Presion Atmosferica', false);
 
     createCanvas(918, 466);
     imgMapa.resize(918, 466);
