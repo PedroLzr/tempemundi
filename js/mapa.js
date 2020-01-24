@@ -1,5 +1,6 @@
 let imgMapa;
 let data = [];
+let cbTemperaturas, cbHumedad, cbPresion;
 let ciudades = new Array("http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=28001,es&units=metric",
  /*Paris*/          "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=75000,fr&units=metric",
  /*Bogotá*/         "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=110111,co&units=metric",
@@ -19,6 +20,13 @@ function setup(){
     createCanvas(918, 466);
     imgMapa.resize(918, 466);
     image(imgMapa, 0, 0);
+
+    cbTemperaturas = createCheckbox('Temperaturas', true);
+    //cbTemperaturas.changed(myCheckedEvent);
+    cbHumedad = createCheckbox('Humedad', false);
+    //cbHumedad.changed(myCheckedEvent);
+    cbPresion = createCheckbox('Presio', false);
+    //cbPresion.changed(myCheckedEvent);
 }
 
 function draw(){
@@ -31,20 +39,16 @@ function prueba(){
 }
 
 function pintarCiudades(){
-    let temperaturas = document.getElementById("cbTemperaturas");
-    let humedad = document.getElementById("cbHumedad");
-    let presion = document.getElementById("cbPresion");
-
     noStroke();
     textSize(10);
 
-    if(temperaturas.checked == true){
+    if(cbTemperaturas.checked == true){
         pintarTemperaturas();
     }
-    if(humedad.checked == true){
+    if(cbHumedad.checked == true){
         pintarHumedad();
     }
-    if(presion.checked == true){
+    if(cbPresion.checked == true){
         pintarPresion();
     }
 }
