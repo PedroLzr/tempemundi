@@ -4,7 +4,9 @@ let ciudades = new Array("http://api.openweathermap.org/data/2.5/forecast?id=524
  /*Paris*/          "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=75000,fr&units=metric",
  /*Bogotá*/         "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=110111,co&units=metric",
  /*Nueva York*/     "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=10001,us&units=metric",
- /*Rauma*/          "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=26100,fi&units=metric");
+ /*Rauma*/          "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=26100,fi&units=metric",
+ /*Sydney*/         "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=2000,au&units=metric",
+ /*Moscú*/          "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=2a561310e42c062d6e1109fc958905c6&zip=101000,ru&units=metric");
 
 function preload(){
     imgMapa = loadImage('assets/World-Map.svg');
@@ -38,6 +40,8 @@ function pintarTemperaturas(){
     text(data[2].list[0].main.temp + char(176), 240, 230); //Bogotá
     text(data[3].list[0].main.temp + char(176), 250, 120); //Nueva York
     text(data[4].list[0].main.temp + char(176), 480, 50);  //Rauma
+    text(data[5].list[0].main.temp + char(176), 800, 320); //Sydney
+    text(data[6].list[0].main.temp + char(176), 520, 60);  //Moscú
 }
 
 function pintarCuadricula(){
