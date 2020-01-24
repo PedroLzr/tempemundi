@@ -26,6 +26,10 @@ function draw(){
     pintarCiudades();
 }
 
+function prueba(){
+    alert("yeep");
+}
+
 function pintarCiudades(){
     let temperaturas = document.getElementById("cbTemperaturas");
     let humedad = document.getElementById("cbHumedad");
