@@ -31,6 +31,8 @@ function setup(){
 }
 
 function draw(){
+    image(imgMapa, 0, 0);
+    
     //pintarCuadricula();
     pintarCiudades();
 }
