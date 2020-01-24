@@ -17,28 +17,20 @@ function preload(){
 }
 
 function setup(){
+    cbTemperaturas = createCheckbox('Temperaturas', true);
+    cbHumedad = createCheckbox('Humedad', false);
+    cbPresion = createCheckbox('Presión Atmosférica', false);
+
     createCanvas(918, 466);
     imgMapa.resize(918, 466);
-
-    cbTemperaturas = createCheckbox('Temperaturas', true);
-    //cbTemperaturas.changed(myCheckedEvent);
-    cbHumedad = createCheckbox('Humedad', false);
-    //cbHumedad.changed(myCheckedEvent);
-    cbPresion = createCheckbox('Presio', false);
-    //cbPresion.changed(myCheckedEvent);
-
     image(imgMapa, 0, 0);
 }
 
 function draw(){
     image(imgMapa, 0, 0);
-    
+
     //pintarCuadricula();
     pintarCiudades();
-}
-
-function prueba(){
-    alert("yeep");
 }
 
 function pintarCiudades(){
